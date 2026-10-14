@@ -1,0 +1,25 @@
+#Testimonios {
+    padding: 20px 0;
+}
+.testimonial-card {
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+.testimonial-card:hover {
+    transform: translateY(-10px);
+}
+.testimonial-card .card-body {
+    padding: 20px;
+}
+.testimonial-card .card-footer {
+    background-color: #f8f9fa;
+    border-top: 1px solid #e0e0e0;
+    padding: 10px 20px;
+}
+.testimonial-card .card-footer p {
+    margin: 0;
+    font-size: 14px;
+    color: #6c757d;
+}

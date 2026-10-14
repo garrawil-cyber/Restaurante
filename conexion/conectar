@@ -1,0 +1,56 @@
+<?php
+// Función para establecer la conexión a la base de datos
+function conectarDB() {
+    // Datos de conexión (reemplaza con tus propios datos)
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "develoteca";
+
+    // Crear una conexión
+    try {
+        $conn = new mysqli($servername, $username, $password, $dbname);
+        // Comprobar la conexión
+        if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error); 
+
+        }
+        return $conn;
+
+    } catch (Exception $e) {
+        die("Error de conexión: " . $e->getMessage());
+    }
+}
+
+// Función para ejecutar una consulta
+function ejecutarConsulta($conn, $sql) {
+    $result = $conn->query($sql);
+    if (!$result) {
+        die("Error en la consulta: " . $conn->error);
+    }
+    return $result;
+}
+
+// Función para cerrar la conexión
+function cerrarConexion($conn) {
+    $conn->close();
+}
+
+// Ejemplo de uso
+// Conectar a la base de datos
+$conn = conectarDB();
+
+// Ejecutar una consulta
+$sql = "SELECT * FROM usuarios";
+$result = ejecutarConsulta($conn, $sql);
+
+// Mostrar los resultados
+if ($result->num_rows > 0) {
+  while($row = $result->fetch_assoc()) {
+    echo "ID: " . $row["id"]. " - Name: " . $row["name"]. "<br>";
+  }
+} else {
+  echo "0 results";
+}
+
+?>

@@ -1,0 +1,71 @@
+#Chefs {
+  padding: 20px 0;
+}
+.chef-card {
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+.chef-card:hover {
+  transform: translateY(-10px);
+}
+.chef-img {
+  transition: transform 0.5s ease;
+}
+.chef-card:hover .chef-img {
+  transform: scale(1.05);
+}
+.chef-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.chef-card:hover .chef-overlay {
+  opacity: 1;
+}
+.social-links {
+  display: flex;
+  gap: 15px;
+}
+.social-link {
+  width: 40px;
+  height: 40px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #333;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+.social-link:hover {
+  background: #007bff;
+  color: white;
+  transform: translateY(-3px);
+}
+.card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #333;
+}
+.text-muted {
+  font-size: 0.9rem;
+}
+.separator {
+  margin: 0 auto;
+}
+.line {
+  height: 1px;
+  width: 30px;
+  background-color: #333;
+}
